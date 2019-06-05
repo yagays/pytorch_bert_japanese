@@ -1,4 +1,4 @@
-# PYTORCHでBERTの日本語学習済みモデルを利用する
+# PytorchでBERTの日本語学習済みモデルを利用する
 
 これはPytorchで日本語の学習済みBERTモデルを読み込み、文章ベクトル(Sentence Embedding)を計算するためのコードです。
 
@@ -15,7 +15,7 @@
 ## 準備
 
 ### 日本語の学習済みBERTモデル
-京都大学の黒橋・河原研究室が公開している「BERT日本語Pretrainedモデル」を利用します。下記ウェブページからモデルファイルをダウンロードして解凍します。
+京都大学の黒橋・河原研究室が公開している「BERT日本語Pretrainedモデル」を利用します。下記ウェブページからモデルファイルをダウンロードして解凍してください。
 
 [BERT日本語Pretrainedモデル \- KUROHASHI\-KAWAHARA LAB](http://nlp.ist.i.kyoto-u.ac.jp/index.php?BERT%E6%97%A5%E6%9C%AC%E8%AA%9EPretrained%E3%83%A2%E3%83%87%E3%83%AB)
 
@@ -24,7 +24,7 @@ Juman++をインストールします。インストール方法については�
 
 [ku\-nlp/jumanpp: Juman\+\+ \(a Morphological Analyzer Toolkit\)](https://github.com/ku-nlp/jumanpp)
 
-macOSならば、Homebrewを使って下記のようにインストールできます。
+なお、macOSならばHomebrewを使って下記のように簡単にインストールできます。
 
 ```sh
 $ brew install jumanpp
@@ -38,8 +38,12 @@ $ pip install pytorch-pretrained-bert
 $ pip install pyknp
 ```
 
+なお、ここではPytorchをBERT実装に利用するので、Pytorchはインストールされているものとします。
+
+[PyTorch](https://pytorch.org/)
+
 ## 実行する
-本レポジトリの`bert_juman`から`BertWithJumanModel`クラスをインポートします。クラスの引数には、ダウンロードした日本語の学習済みBERTモデルのディレクトリを指定します。
+本レポジトリの`bert_juman`から`BertWithJumanModel`クラスをインポートします。クラスの引数には、ダウンロードした日本語の学習済みBERTモデルのディレクトリを指定します。必要なファイルは`pytorch_model.bin`と`vocab.txt`のみです。
 
 
 ```py
