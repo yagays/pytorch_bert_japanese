@@ -81,3 +81,14 @@ array([ 1.2089624 ,  0.6267309 ,  0.7243419 , -0.12712255,  1.8050476 ,
 ```
 
 これらのパラメータは[hanxiao/bert-as-service](https://github.com/hanxiao/bert-as-service)を参考にしています。
+
+### GPU Option
+
+```
+In []: bert = BertWithJumanModel("../Japanese_L-12_H-768_A-12_E-30_BPE", use_cuda=True)
+
+In []: bert.get_sentence_embedding("吾輩は猫である。")
+Out[]:
+array([-4.25627649e-01, -3.42006773e-01, -7.15175271e-02, -1.09820020e+00,
+        1.08186746e+00, -2.35576674e-01, -1.89862609e-01, -5.50959229e-01,
+```
