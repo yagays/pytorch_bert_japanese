@@ -27,9 +27,9 @@ class BertWithJumanModel():
 
     def get_sentence_embedding(self, text, pooling_layer=-2, pooling_strategy="REDUCE_MEAN"):
         preprocessed_text = self._preprocess_text(text)
-        tokens = ["[CLS]"] + self.juman_tokenizer.tokenize(preprocessed_text)
-        bert_tokens = self.bert_tokenizer.tokenize(" ".join(tokens[:128]))  # max_seq_len
-        ids = self.bert_tokenizer.convert_tokens_to_ids(bert_tokens)
+        tokens = self.juman_tokenizer.tokenize(preprocessed_text)
+        bert_tokens = self.bert_tokenizer.tokenize(" ".join(tokens))
+        ids = self.bert_tokenizer.convert_tokens_to_ids(["[CLS]"] + bert_tokens[:126] + ["[SEP]"]) # max_seq_len-2
         tokens_tensor = torch.tensor(ids).reshape(1, -1)
 
         self.model.eval()
