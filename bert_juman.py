@@ -43,5 +43,7 @@ class BertWithJumanModel():
             return np.max(embedding, axis=0)
         elif pooling_strategy == "REDUCE_MEAN_MAX":
             return np.r_[np.max(embedding, axis=0), np.mean(embedding, axis=0)]
+        elif pooling_strategy == "CLS_TOKEN":
+            return embedding[0]
         else:
             raise ValueError("specify valid pooling_strategy: {REDUCE_MEAN, REDUCE_MAX, REDUCE_MEAN_MAX}")
