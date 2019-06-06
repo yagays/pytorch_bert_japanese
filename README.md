@@ -84,7 +84,7 @@ array([ 1.2089624 ,  0.6267309 ,  0.7243419 , -0.12712255,  1.8050476 ,
 
 ### GPU Option
 
-```
+```py
 In []: bert = BertWithJumanModel("../Japanese_L-12_H-768_A-12_E-30_BPE", use_cuda=True)
 
 In []: bert.get_sentence_embedding("吾輩は猫である。")
