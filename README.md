@@ -66,6 +66,7 @@ array([ 2.22642735e-01, -2.40221739e-01,  1.09303640e-02, -1.02307117e+00,
 - `REDUCE_MEAN`: 要素ごとにaverage-pooling
 - `REDUCE_MAX`: 要素ごとにmax-pooling
 - `REDUCE_MEAN_MAX`: `REDUCE_MEAN`と`REDUCE_MAX`を結合したもの
+- `CLS_TOKEN`: [CLS]トークンのベクトルをそのまま利用
 
 が選択できます。
 
